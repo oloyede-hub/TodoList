@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300&display=swap');
+
+
+
+:root {
+    --bg-checked: linear-gradient hsl(192, 100%, 67%) hsl(280, 87%, 65%);
+    --font-size: 18px ;
+    --font-size2: 12px ;
+}
+:root.light {
+    --bg-todo-container: hsl(0, 0%, 98%);
+    --font-color: hsl(235, 21%, 11%);
+    --bg-todo: hsl(236, 33%, 92%);
+    --list-hover: hsl(233, 11%, 84%);
+    --btn-hover: hsl(232, 10%, 70%);
+    --border-color: hsl(236, 9%, 61%);
+    --font-color2: hsl(235, 19%, 35%);
+    --toggle-theme: url('/images/icon-moon.svg');
+    --bg-image: url('/images/bg-desktop-light.jpg');
+    --bg-mobile: url("/images/bg-mobile-light.jpg");
+    
+}
+
+:root.dark {
+    --font-color: hsl(0, 0%, 98%);
+    --bg-todo: hsl(235, 21%, 11%);
+    --bg-todo-container: hsl(235, 24%, 19%);
+    --border-color: hsl(234, 39%, 85%);
+    --list-hover: hsl(236, 33%, 92%);
+    --dark-grayish-blue: hsl(234, 11%, 52%);
+    --font-color: hsl(233, 14%, 35%);
+    --very-dark-grayish-blue: hsl(237, 14%, 26%);
+    --bright-blue: hsl(220, 98%, 61%);
+    --btn-hover: hsl(232, 10%, 70%);
+    --toggle-theme: url('/images/icon-sun.svg');
+    --bg-image: url('/images/bg-desktop-dark.jpg');
+    --bg-mobile: url("/images/bg-mobile-dark.jpg");
+
+}
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 16px;
+}
+
+
+.container {
+    width: 1440px;
+    height: 100vh;
+    max-width: 100%;
+    background:var(--bg-image) no-repeat center top;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-todo);
+}
+/* .todo {
+    width: 100%;
+    height: 100%;
+    
+} */
+.todo-container {
+    width: 500px;
+    height: 100vh;
+    max-height: 100%;
+    background-color: transparent ;
+    color: --var(--font-color);
+    padding: 20px;
+    
+}
+
+.todo-container header {
+    width: 100%;
+    height: 78px;
+
+}
+
+header .navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+
+}
+
+header nav h2 {
+    letter-spacing: 15px;
+}
+
+.img-theme {
+    width: 40px;
+    height: 50px;
+    background: var(--toggle-theme) no-repeat center content-box;
+
+}
+
+.img-theme:hover {
+    cursor: pointer;
+}
+
+.input-container {
+    width: 100%;
+    height: 50px;
+    margin-bottom: 20px;
+    position: relative;
+    display: flex;
+}
+
+.fa-solid {
+    background-color: blue;
+    
+}
+
+.input-container input {
+    background-color: transparent;
+    width: 90%;
+    height: 100%;
+    padding: 10px 20px ;
+    font-size: var(--font-size2);
+    outline: none;
+    border-width: none;
+    background-color: var(--bg-todo-container);
+    font-weight: 100;
+    letter-spacing: 1px;
+    color: var(--font-color);
+    border: none;
+}
+
+.input-container button {
+    padding:10px;
+    height: 100%;
+    border: none;
+    color: var(--font-color);
+    background: none;
+    background-color: var(--bg-todo);
+    border-left: none;
+}
+
+.list-item  button:hover {
+    background-color: var(--btn-hover);
+}
+
+.todo-lists {
+    width: 100%;
+    height: auto;
+    background-color: var(--bg-todo-container);
+    position: relative;
+    flex: 2 1 auto;
+    color: var(--font-color);
+}
+.todo-lists:hover {
+    color: var(--font-color);
+}
+
+
+
+ul {
+    padding: 0;
+}
+
+ul .list-item {
+    width: 100%;
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: #ffffff;
+    height: 50px;
+    border-bottom: 1px solid var(--border-color);
+    padding: 5px 10px ;
+}
+
+.text {
+    display: flex;
+    align-items: center;
+    width: 95%;
+    justify-content: space-between;
+    padding: 5px 15px 5px 5px ;
+}
+
+ul li:hover {
+    background-color: var(--list-hover);
+}
+
+.list-item .text .delete-button {
+    visibility: hidden;
+    font-size: 24px;
+    color: var(--font-color);
+    background-color:  transparent;
+}
+
+ul .list-item:hover .delete-button {
+    visibility: visible;
+    background-color:  var(--bg-todo);
+
+}
+
+ul li p {
+    /* margin-left: 20px; */
+}
+ul li input {
+    width: 20px;
+    height: 20px;
+} 
+
+
+
+.filter-options {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 40px;
+    color: var(--font-color);
+    font-size: 14px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    flex: 1 1 auto;
+
+
+}
+
+
+.filter-options .items ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    padding: 10px 10px;
+}
+.filter-options .items ul  li{
+    border-bottom: none;
+    flex: 1;
+}
+.items button {
+    padding:10px;
+    height: 100%;
+    border: none;
+    color: var(--font-color);
+    /* background-color: unset; */
+}
+
+.filter-options button {
+    padding:10px;
+    height: 100%;
+    border: none;
+    color: var(--font-color);
+    background: none;
+}
+
+.items button:hover {
+    background-color: var(--btn-hover);
+}
+.filter-options button:hover {
+    background-color: var(--btn-hover);
+}
+
+
+.filter-options .items ul li {
+    margin-left: 6px;
+}
+
+@media screen and (max-width: 400px) {
+    .container {
+        background: var(--bg-mobile) no-repeat center top;
+        background-color: var(--bg-todo);
+    }
+}
